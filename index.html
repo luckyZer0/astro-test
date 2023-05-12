@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Astro Crash Course</title>
+    <link rel="stylesheet" href="/_astro/_slug_.5eb5ce67.css" />
+    <link rel="stylesheet" href="/_astro/blog.c2ec1608.css" />
+    <link rel="stylesheet" href="/_astro/index.9ee43609.css" />
+    <link rel="stylesheet" href="/_astro/index.dc9b638a.css" />
+  </head>
+  <body>
+    <header class="header astro-3EF6KSR2">
+      <div class="container astro-3EF6KSR2">
+        <div class="logo astro-3EF6KSR2">
+          <a href="index.html" class="astro-3EF6KSR2">
+            <img
+              src="/_astro/logo.6498442f.svg"
+              alt=""
+              class="astro-3EF6KSR2"
+            />
+          </a>
+        </div>
+        <nav class="astro-3EF6KSR2">
+          <ul class="astro-3EF6KSR2">
+            <li class="astro-3EF6KSR2">
+              <a href="/" class="astro-3EF6KSR2">Home</a>
+            </li>
+            <li class="astro-3EF6KSR2">
+              <a href="/about" class="astro-3EF6KSR2">About</a>
+            </li>
+            <li class="astro-3EF6KSR2">
+              <a href="/blog" class="astro-3EF6KSR2">Blog</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="showcase astro-XYG7OB6D">
+      <div class="showcase-text astro-XYG7OB6D">
+        <h1 class="astro-XYG7OB6D">Welcome To The Astro Crash Course!</h1>
+        <p class="astro-XYG7OB6D">
+          Build super fast HTML-first websites using your favorite JavaScript
+          frameworks
+        </p>
+      </div>
+
+      <div class="showcase-img astro-XYG7OB6D">
+        <img
+          class="logos astro-XYG7OB6D"
+          src="/_astro/framework-logos.c0e34b5b.png"
+          alt=""
+        />
+        <img
+          class="logos-small astro-XYG7OB6D"
+          src="/_astro/framework-logos-small.ec62e422.png"
+          alt=""
+        />
+      </div>
+
+      <p class="showcase-demo astro-XYG7OB6D">
+        <small class="astro-XYG7OB6D">
+          This is a demo website used for the YouTube crash course
+        </small>
+      </p>
+    </section>
+    <section class="features astro-VNIVFUH2">
+      <div class="container astro-VNIVFUH2">
+        <div class="card false astro-DOHJNAO5">
+          <h3 class="astro-VNIVFUH2">Zero JavaScript Runtime</h3>
+          <p class="astro-VNIVFUH2">
+            Astro renders HTML on the server and strips away any remaining,
+            unused JavaScript.
+          </p>
+        </div>
+        <div class="card false astro-DOHJNAO5">
+          <h3 class="astro-VNIVFUH2">The Power of Islands</h3>
+          <p class="astro-VNIVFUH2">
+            Need interactive UI? Load individual, non-blocking component islands
+            in parallel.
+          </p>
+        </div>
+        <div class="card false astro-DOHJNAO5">
+          <h3 class="astro-VNIVFUH2">Lazy-Loading Islands</h3>
+          <p class="astro-VNIVFUH2">
+            Components only hydrate when they scroll into view. If you don&#39;t
+            see it, Astro won&#39;t load it.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="page-content">
+      <div class="container">
+        <h2>Get Started With Astro</h2>
+        <p>
+          Get a new Astro project up and running locally with our helpful
+          create-astro CLI wizard!
+        </p>
+        <!-- Tabs -->
+        <div class="tabs astro-XLVZFUXV">
+          <ul class="tabs-header astro-XLVZFUXV">
+            <li class="astro-XLVZFUXV">NPM</li>
+            <li class="astro-XLVZFUXV">PNPM</li>
+            <li class="astro-XLVZFUXV">YARN</li>
+          </ul>
+          <ul class="tabs-content astro-XLVZFUXV">
+            <li class="tab astro-XLVZFUXV">$ npm create astro@latest</li>
+            <li class="tab astro-XLVZFUXV">$ pnpm create astro@lates</li>
+            <li class="tab astro-XLVZFUXV">$ yarn create astro</li>
+          </ul>
+        </div>
+
+        <script>
+          (function () {
+            const activeTextColor = "green";
+
+            function createTabs(element) {
+              const header = element.querySelector(".tabs-header");
+              const content = element.querySelector(".tabs-content");
+              const tab_headers = [...header.children];
+              const tab_contents = [...content.children];
+              tab_contents.forEach((x) => (x.style.display = "none"));
+              let current_tab_index = -1;
+
+              function setTab(index) {
+                if (current_tab_index > -1) {
+                  tab_headers[current_tab_index].style.fontWeight = 400;
+                  tab_headers[current_tab_index].style.color = "#fff";
+                  tab_contents[current_tab_index].style.display = "none";
+                }
+                tab_headers[index].style.fontWeight = 800;
+                tab_headers[index].style.color = activeTextColor;
+                tab_contents[index].style.display = "flex";
+                current_tab_index = index;
+              }
+
+              let default_tab_index = tab_headers.findIndex((x) => {
+                return [...x.classList].indexOf("default-tab") > -1;
+              });
+
+              default_tab_index =
+                default_tab_index === -1 ? 0 : default_tab_index;
+              setTab(default_tab_index);
+              tab_headers.forEach((x, i) => (x.onclick = () => setTab(i)));
+            }
+
+            // Run
+            [...document.querySelectorAll(".tabs")].forEach((x) =>
+              createTabs(x)
+            );
+          })();
+        </script>
+        <h3>Start Building</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ipsum
+          deserunt inventore ut voluptate, officia maiores repellat tenetur
+          praesentium omnis est ex tempora a necessitatibus reiciendis at et
+          dignissimos. Ipsam eius consequuntur cupiditate aperiam porro, esse
+          laborum impedit nesciunt ut voluptatum assumenda aspernatur libero
+          iusto error molestias dolorum, necessitatibus labore?
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer astro-SZ7XMLTE">
+      <div class="container astro-SZ7XMLTE">
+        <div class="astro-SZ7XMLTE">
+          <h3 class="astro-SZ7XMLTE">Astro</h3>
+          <p class="astro-SZ7XMLTE">
+            This is a demo website to show how the Astro framework works. Visit
+            the
+            <a href="https://astro.build" class="astro-SZ7XMLTE"
+              >official website</a
+            >
+            to learn more.
+          </p>
+        </div>
+        <div class="astro-SZ7XMLTE">
+          <h3 class="astro-SZ7XMLTE">Links</h3>
+          <ul class="astro-SZ7XMLTE">
+            <li class="astro-SZ7XMLTE">
+              <a href="/" class="astro-SZ7XMLTE">Home</a>
+            </li>
+            <li class="astro-SZ7XMLTE">
+              <a href="/about" class="astro-SZ7XMLTE">About</a>
+            </li>
+            <li class="astro-SZ7XMLTE">
+              <a href="/blog" class="astro-SZ7XMLTE">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
