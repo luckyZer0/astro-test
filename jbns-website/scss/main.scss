@@ -338,60 +338,60 @@ li.move-right {
 
 // parallax
 @mixin overlay($bg: $black, $alpha: 0.5) {
-    background-color: rgba($bg, $alpha);
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-  }
+  background-color: rgba($bg, $alpha);
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
 
 .service-area-top {
-    background-image: url("/img/ppns_blur.jpg");
-    padding: 120px 120px;
-    position: relative;
-    z-index: 1;
-  
-    &:before {
-      @include overlay($navyBlack, 0.9);
-      z-index: -1;
-    }
-  }
-  
-  .parallax {
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  background-image: url("img/ppns_blur.jpg");
+  padding: 120px 120px;
+  position: relative;
+  z-index: 1;
 
-   //coursell-caption
-   .main-caption{
-    bottom: 27rem;
-    left: 30rem;
-    position: absolute;
-    font-size: 3.5rem;
-    text-align: left; 
-    font-weight: 600;
-    font-style: italic;
+  &:before {
+    @include overlay($navyBlack, 0.9);
+    z-index: -1;
   }
+}
 
-  // go to top
-  .top {
-    --offset: 50px;
-    position: sticky;
-    bottom: 20px;
-    text-align: right;
-    left: 200rem;
-    margin-right: 10px;
-    // margin-left: calc(100vw + var(--offset));
-    // right: calc(100vw - var(--offset));
-    place-self: end;
-    margin-top: calc(100vh + var(--offset));
-    text-decoration: none;
-    padding: 10px;
-    color: white;
-    background: $navyBlack;
-    border-radius: 100px;
-    white-space: nowrap;
-    z-index: 2;
-  }
+.parallax {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+//coursell-caption
+.main-caption {
+  bottom: 27rem;
+  left: 30rem;
+  position: absolute;
+  font-size: 3.5rem;
+  text-align: left;
+  font-weight: 600;
+  font-style: italic;
+}
+
+// go to top
+.top {
+  --offset: 50px;
+  position: sticky;
+  bottom: 20px;
+  text-align: right;
+  left: 200rem;
+  margin-right: 10px;
+  // margin-left: calc(100vw + var(--offset));
+  // right: calc(100vw - var(--offset));
+  place-self: end;
+  margin-top: calc(100vh + var(--offset));
+  text-decoration: none;
+  padding: 10px;
+  color: white;
+  background: $navyBlack;
+  border-radius: 100px;
+  white-space: nowrap;
+  z-index: 2;
+}
