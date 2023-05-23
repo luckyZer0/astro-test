@@ -237,7 +237,7 @@ li.move-right {
 }
 .service-area-top {
   background-image: url("img/ppns_blur.jpg");
-  padding: 120px 120px;
+  padding: 100px 0;
   position: relative;
   z-index: 1;
   &:before {
@@ -442,5 +442,9 @@ li.move-right {
     .nav-list {
       display: flex;
     }
+  }
+  .hide_trans {
+    visibility: hidden;
+    display: none;
   }
 }
