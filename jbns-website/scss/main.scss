@@ -448,3 +448,12 @@ li.move-right {
     display: none;
   }
 }
+
+.custom-gap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
