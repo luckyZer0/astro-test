@@ -99,7 +99,6 @@ $darkOcean: rgb(22, 31, 80);
     box-sizing: border-box;
   }
 }
-
 body {
   overflow-x: hidden;
 }
@@ -117,7 +116,7 @@ header {
   left: 0;
 }
 .custom-container {
-  background-color: $navyBlack;
+  background-color: rgb(8, 11, 26);
   width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
@@ -153,7 +152,7 @@ nav {
   li {
     line-height: 4rem;
     position: relative;
-    &:hover {
+    &.active {
       > .sub-menu {
         top: 5rem;
         opacity: 1;
@@ -168,17 +167,31 @@ nav {
     text-transform: uppercase;
     transition: color 350ms, background-color 0.3s ease-in;
     &:hover {
-      background-color: $darkOcean;
+      background-color: rgb(22, 31, 80);
       color: #eee;
     }
   }
+  button {
+    all: unset;
+    display: block;
+    color: #eee;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    transition: color 350ms, background-color 0.3s ease-in;
+    &:hover {
+      background-color: rgb(22, 31, 80);
+      color: #eee;
+      cursor: pointer;
+    }
+  }
 }
+
 .custom-btn {
   padding: 0.5rem 1.3rem;
   display: inline-block;
   color: #eee;
   background-color: rgba(0, 0, 0, 0.2);
-  border: 2px solid $darkOcean;
+  border: 2px solid rgb(22, 31, 80);
   border-radius: 1.5rem;
 }
 .sub-menu {
@@ -187,8 +200,8 @@ nav {
   grid-template-columns: repeat(2, 2fr);
   gap: 1rem;
   position: absolute;
-  border-top: 3px solid $darkOcean;
-  background-color: $navyBlack;
+  border-top: 3px solid rgb(22, 31, 80);
+  background-color: rgb(8, 11, 26);
   z-index: 100;
   top: 6rem;
   opacity: 0;
@@ -197,7 +210,7 @@ nav {
   padding: 1rem 0;
   li {
     line-height: 1.5rem;
-    &:hover {
+    &.active {
       > .sub-menu {
         top: 140%;
       }
@@ -209,7 +222,7 @@ nav {
     top: -2.5rem;
     left: 1rem;
     border: 1.2rem solid transparent;
-    border-bottom-color: $darkOcean;
+    border-bottom-color: rgb(22, 31, 80);
   }
   .sub-menu {
     display: block;
@@ -217,9 +230,111 @@ nav {
     top: 50%;
   }
 }
+
 li.move-right {
   margin: auto 0 auto auto;
   line-height: initial;
+}
+.service-area-top {
+  background-image: url("img/ppns_blur.jpg");
+  padding: 120px 120px;
+  position: relative;
+  z-index: 1;
+  &:before {
+    background-color: rgba(8, 11, 26, 0.9);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+.parallax {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-caption {
+  bottom: 38rem;
+  left: 38rem;
+  position: absolute;
+  font-size: 3.5rem;
+  text-align: left;
+  font-weight: 600;
+  font-style: italic;
+}
+
+@media screen and (max-width: 1675px) {
+  .main-caption {
+    bottom: 33rem;
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 1560px) {
+  .main-caption {
+    left: 33rem;
+    bottom: 28rem;
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 1330px) {
+  .main-caption {
+    left: 26rem;
+    bottom: 22rem;
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .main-caption {
+    left: 22rem;
+    bottom: 18rem;
+  }
+}
+@media screen and (max-width: 970px) {
+  .main-caption {
+    bottom: 14rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .main-caption {
+    left: 18rem;
+    bottom: 12rem;
+    font-size: 1.8rem;
+  }
+}
+
+// .main-caption {
+//   bottom: 27rem;
+//   left: 30rem;
+//   position: absolute;
+//   font-size: 3.5rem;
+//   text-align: left;
+//   font-weight: 600;
+//   font-style: italic;
+// }
+.top {
+  --offset: 50px;
+  position: sticky;
+  bottom: 20px;
+  text-align: right;
+  left: 200rem;
+  margin-right: 10px;
+  place-self: end;
+  margin-top: calc(100vh + var(--offset));
+  text-decoration: none;
+  padding: 10px;
+  color: white;
+  background: rgb(8, 11, 26);
+  border-radius: 100px;
+  white-space: nowrap;
+  z-index: 2;
 }
 @media screen and (max-width: 1700px) {
   .nav-list {
@@ -228,51 +343,45 @@ li.move-right {
   .sub-menu {
     display: block;
     white-space: nowrap;
-  }
-
-  .sub-menu .sub-menu::before {
-    top: 0;
-    left: -2.5rem;
-    border: 1.2rem solid transparent;
-    border-right-color: $darkOcean;
-  }
-  .sub-menu .sub-menu {
-    display: block;
-    white-space: nowrap;
-    border-top: none;
-    border-left: 3px solid $darkOcean;
-    left: 160%;
-  }
-
-  .sub-menu li:hover > .sub-menu {
-    top: 0;
-    left: 100%;
+    .sub-menu {
+      &::before {
+        top: 0;
+        left: -2.5rem;
+        border: 1.2rem solid transparent;
+        border-right-color: rgb(22, 31, 80);
+      }
+      display: block;
+      white-space: nowrap;
+      border-top: none;
+      border-left: 3px solid rgb(22, 31, 80);
+      left: 50%;
+    }
+    li {
+      &.active {
+        > .sub-menu {
+          top: 0;
+          left: 100%;
+        }
+      }
+    }
   }
 }
-
 @media screen and (max-width: 1510px) {
   .nav-list {
     width: calc(100% - 5vw);
   }
-
-  .sub-menu li:hover > .sub-menu {
-    top: 0;
-    left: 70%;
-  }
-}
-
-@media screen and (max-width: 1410px) {
-  .nav-list {
-    a {
-      padding: 0 0.8rem;
+  .sub-menu {
+    li {
+      &.active {
+        > .sub-menu {
+          top: 0;
+          left: 60%;
+        }
+      }
     }
   }
-
-  .sub-menu li:hover > .sub-menu {
-    top: 0;
-    left: 50%;
-  }
 }
+
 @media screen and (max-width: 1240px) {
   .nav-list {
     position: fixed;
@@ -283,7 +392,7 @@ li.move-right {
     display: none;
     flex-direction: column;
     align-items: initial;
-    background-color: $navyBlack;
+    background-color: rgb(8, 11, 26);
     z-index: 1000;
     overflow-y: scroll;
     padding: 2rem 1rem;
@@ -291,7 +400,7 @@ li.move-right {
       line-height: 2.5rem;
     }
     li {
-      &:hover {
+      &.active {
         > .sub-menu {
           opacity: 1;
           visibility: visible;
@@ -306,7 +415,7 @@ li.move-right {
     padding: 0;
     position: initial;
     border: 3px solid transparent;
-    border-left-color: $darkOcean;
+    border-left-color: rgb(22, 31, 80);
     margin-left: 1rem;
     max-height: 0;
     &::before {
@@ -334,64 +443,4 @@ li.move-right {
       display: flex;
     }
   }
-}
-
-// parallax
-@mixin overlay($bg: $black, $alpha: 0.5) {
-  background-color: rgba($bg, $alpha);
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-}
-
-.service-area-top {
-  background-image: url("img/ppns_blur.jpg");
-  padding: 120px 120px;
-  position: relative;
-  z-index: 1;
-
-  &:before {
-    @include overlay($navyBlack, 0.9);
-    z-index: -1;
-  }
-}
-
-.parallax {
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-//coursell-caption
-.main-caption {
-  bottom: 27rem;
-  left: 30rem;
-  position: absolute;
-  font-size: 3.5rem;
-  text-align: left;
-  font-weight: 600;
-  font-style: italic;
-}
-
-// go to top
-.top {
-  --offset: 50px;
-  position: sticky;
-  bottom: 20px;
-  text-align: right;
-  left: 200rem;
-  margin-right: 10px;
-  // margin-left: calc(100vw + var(--offset));
-  // right: calc(100vw - var(--offset));
-  place-self: end;
-  margin-top: calc(100vh + var(--offset));
-  text-decoration: none;
-  padding: 10px;
-  color: white;
-  background: $navyBlack;
-  border-radius: 100px;
-  white-space: nowrap;
-  z-index: 2;
 }
